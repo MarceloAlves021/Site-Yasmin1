@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sportsmin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6d3f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #d083b4;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .cart-icon {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #000;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(225, 144, 221, 0.2);
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #fffeff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 999;
+            border-radius: 8px;
+        }
+
+        .about {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #e46eef;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #d083b4;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #d083b4;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #d083b4;
+        }
+
+        .contact-social-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .contact, .social {
+            flex: 1 1 300px;
+            padding: 40px;
+        }
+
+        .contact h2, .social h2 {
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            text-align: center;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .social-links {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #d083b4;
+            color: #000000;
+        }
+        .lateral-direita {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 200px; /* ajuste a largura como preferir */
+            z-index: 1; /* para a imagem ficar ao fundo */
+            overflow: hidden;
+}
+
+.lateral-direita img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+    <div class="lateral-direita">
+        <img src="imagens/imagem lateral.jpg" alt="Imagem lateral">
+    </div>
+
+    <header>
+        <h1>Sportsmin</h1>
+        <p>Onde a montanha encontra o seu ritmo!</p>
+        <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+        
+        
+    </header>
+
+    <section class="about">
+        <h2>Sobre a Nossa Loja</h2>
+        <p>🏔 Bem-vindo à Sportsmin!<br><br>
+            Sua nova loja online especializada em corrida de montanha!<br> Aqui você encontra tudo que precisa para desafiar seus limites com segurança, conforto e estilo.<br><br>
+            
+            👕 Roupas técnicas projetadas para a performance nos terrenos mais exigentes.<br>
+            🎒 Equipamentos e acessórios pensados para atletas que vivem a aventura.<br>
+            💨 Qualidade, resistência e inovação – tudo com a essência de quem ama o esporte outdoor.<br><br>
+            
+            🌱 Feita por amantes da natureza, para quem transforma cada trilha em conquista.<br>
+            💻 Navegue, conheça nossos produtos e corra para aproveitar!<br><br>
+            
+            Sportsmin – Onde a montanha encontra o seu ritmo. 🏃‍♂🏃‍♀</p>
+        
+    </section>
+
+    <div class="container">
+        <div class="product">
+            <img src="imagens/jaquetaazul.jpg" alt="produto 1
+            ">
+            <h3>JAQUETA PUFFER PATAGÔNIA FEM.
+            </h3>
+            <p class="price">R$ 699,90<br>
+                ou 6x de R$ 116,65 sem juros</p>
+            <button class="buy-button">Comprar</button>
+        </div>
+
+        <div class="product">
+            <img src="imagens/jaquetaamarela.jpg" alt="produto 2
+            ">
+            <h3>JAQUETA GOOSE DOWN PUFFER
+                KAILASH MASC.
+                </h3>
+            <p class="price">R$ 1.199,90<br>
+                ou 6x de R$ 199,98 sem juros</p>
+            <button class="buy-button">Comprar</button>
+        </div>
+
+        <div class="product">
+            <img src="imagens/jaquetarosa.jpg" alt="produto 3">
+            <h3>JAQUETA GOOSE DOWN PUFFER
+                KAILASH FEM.
+                </h3>
+            <p class="price">R$ 1.199,90,<br>
+                ou 6x de R$ 199,98 sem juros</p>
+            <button class="buy-button">Comprar</button>
+        </div>
+    </div>
+
+    <section class="contact-social-section">
+        <div class="contact">
+            <h2>Fale Conosco</h2>
+            <div class="contact-info">
+                <p><strong>📞 WhatsApp:</strong> (11) 4002-8922</p>
+                <p><strong>📧 E-mail:</strong> sportsmin@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="social">
+            <h2>Nos Siga nas Redes Sociais</h2>
+            <div class="social-links">
+                <a href="@Sports Min">Facebook</a> |
+                <a href="Sports Min">Twitter</a> |
+                <a href="Sports_Min">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 sportsmin. Todos os direitos reservados.
+    </footer>
+
+    <div id="cart-panel" class="cart-panel">
+        <h3>🛒 Carrinho de Compras</h3>
+        <ul id="cart-items"></ul>
+        <button onclick="clearCart()">Esvaziar Carrinho</button>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(productName) {
+            cart.push(productName);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            document.getElementById("cart-count").textContent = cart.length;
+
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${index + 1}. ${item}`;
+                cartItems.appendChild(li);
+            });
+        }
+
+        function toggleCart() {
+            const panel = document.getElementById("cart-panel");
+            panel.style.display = panel.style.display === "block" ? "none" : "block";
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartDisplay();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".buy-button");
+            buttons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const productName = this.parentElement.querySelector("h3").textContent;
+                    addToCart(productName);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
